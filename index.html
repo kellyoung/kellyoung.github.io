@@ -242,14 +242,17 @@
             });
 
             var ProjectPicture = React.createClass({
+              materialboxed: function(){
+                $('.materialboxed').materialbox();
+              },
               render: function() {
                 var ProjPicStyle = {
-                  width: "250px",
+                  width: "300px",
                   border: "solid 0.5px",
                   borderColor: "#d3d3d3"
                 }
                 return(
-                  <div className="col s4"><img className="responsive-img" src={this.props.piclink} style={ProjPicStyle}/></div>
+                  <div className="col s4"><img onClick={this.materialboxed} className="responsive-img materialboxed" src={this.props.piclink} style={ProjPicStyle}/></div>
                   
                 );
               }
