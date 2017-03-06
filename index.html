@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+    <title>Kelly Young</title>
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+    <script src="js/babel.js"></script>
+    <script src="js/ReactRouter_v240.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Amatic+SC|Satisfy' rel='stylesheet' type='text/css'>
+
+   <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <style>
+        body {
+          background-color: white;
+          margin: 0;
+          margin-top: 10px;
+          font-family: 'Roboto', sans-serif;
+        }
+
+        #logo {
+          width: 48px;
+          vertical-align: middle;
+        }
+
+        #page-name {
+          /*font-family: 'Amatic SC', cursive;*/
+          font-family: 'Century Gothic';
+          letter-spacing: 3px;
+          font-weight: 200;
+          font-size: 36px;
+          vertical-align: middle;
+
+        }
+
+        ul.header li {
+          display: inline;
+          list-style-type: none;
+          margin: 0;
+        }
+        ul.header {
+          padding: 0;
+          margin-top: 5px;
+        }
+        ul.header li a {
+          text-decoration: none;
+          padding: 6px;
+          padding-left: 0;
+          padding-right: 24px;
+          display: inline-block;
+          color: black;
+          size: 20px;
+        }
+
+        ul.header li a:hover {
+          color: #d40000;
+        }
+
+        ul.header li a.active{
+          font-weight: bold;
+        }
+
+        p, ul{
+          margin: 2px;
+        }
+    </style>
+</head>
+  
+<body>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+    <div id="container" class="container">
+        <script type="text/babel">
+            var { Router,
+                  Route,
+                  IndexRoute,
+                  IndexLink,
+                  Link } = ReactRouter;
+            var App = React.createClass({
+              render: function() {
+                return (
+                  <div>
+                    <div >
+                      <img src="./static/navigimage.png" id="logo"/>&nbsp;
+                      <span id="page-name"> KELLY YOUNG</span>
+                    </div>
+                    <ul className="header">
+                      <li><IndexLink to="/" activeClassName="active">PROJECTS</IndexLink></li>
+                      <li><Link to="/resume" activeClassName="active">RESUME</Link></li>
+                      <li><Link to="/contact" activeClassName="active">CONTACT</Link></li>
+                    </ul>
+                    <div className="content">
+                        {this.props.children}
+                    </div>
+                  </div>
+                )
+              }
+            });
+
+            var ProjectView = React.createClass({
+              render: function() {
+                  var ProjCatStyle = {
+                      fontFamily: '"Amatic SC", cursive',
+                      fontSize: "28px",
+                      marginBottom: "12px"
+                  }
+                  return (
+                    <div>
+                      <div style={ProjCatStyle}>Fullstack</div>
+                      <Project 
+                      piclink="./static/mapview.png"
+                      title="JourneyTeller"
+                      descrip="JourneyTeller is an interactive application that lets users share their travel memories as a map. Users can create a trip and add places to the trip. Each place stores user-entered data and location information. After users enter the places for a trip, the application maps each place for a trip on a page that can be shared with friends and family."
+                      link="http://journey-teller.herokuapp.com"
+                      github="https://github.com/kellyoung/itinerary-mapper"/>
+                      <div style={ProjCatStyle}>Frontend</div>
+                      <Project 
+                      piclink="./static/tictactoe.png"
+                      title="Tic Tac Toe"
+                      descrip="Tic Tac Toe Game: user can choose if they want to be 'x' or 'o'. The computer is programmed to
+                      either tie or win. The project was built as part of Free Code Camp's curriculum."
+                      link="https://kellyoung.github.io/tic-tac-toe/"
+                      github="https://github.com/kellyoung/tic-tac-toe"/>
+
+                      <Project 
+                      piclink="./static/simon.png"
+                      title="Simon Game"
+                      descrip="A game where users must repeat after the computer. The user can play in strict mode where they will start from 0 if they make a mistake or normal mode where they will not be penalized. Once a user reaches a score of 20, they win. This project was built as part of Free Code Camp's curriculum."
+                      link="https://kellyoung.github.io/simon-game/"
+                      github="https://github.com/kellyoung/simon-game"/>
+
+                      <Project 
+                      piclink="./static/pomodoro.png"
+                      title="Pomodoro Timer"
+                      descrip="A timer that allows users to choose the number of intervals and the length of time for breaks and work periods. This project was built as part of Free Code Camp's curriculum."
+                      link="https://kellyoung.github.io/pomodoro-timer/"
+                      github="https://github.com/kellyoung/pomodoro-timer"/>
+
+                      <Project 
+                      piclink="./static/calculator.png"
+                      title="Calculator"
+                      descrip="This project was built as part of Free Code Camp's curriculum."
+                      link="https://kellyoung.github.io/js-calculator/"
+                      github="https://github.com/kellyoung/js-calculator"/>
+
+
+                    </div>
+                  );
+                }
+            });
+            
+            var ContactView = React.createClass({
+              render: function() {
+                  var headerStyle = {
+                    fontFamily: '"Amatic SC", cursive',
+                    fontSize: "28px"
+
+                  }
+                  return (
+                    <div>
+                      <div style={headerStyle}>Contact</div>
+                      <ContactListing icon="github" link="http://github.com/kellyoung" text="/kellyoung"/>
+                      <ContactListing icon="linkedin" link="https://www.linkedin.com/in/kellyoung/" text="/in/kellyoung"/>
+                      <ContactListing icon="email" link="mailto:kelly.y94@gmail.com" text="kelly.y94@gmail.com"/>
+                      <ContactListing icon="resume" link="https://www.dropbox.com/s/c8aaqhychfzd5fm/Young_Kelly_Resume.pdf?dl=0" text="link"/>
+                    </div>
+                  );
+                }
+            });
+             
+            var ResumeView = React.createClass({
+              render: function() {
+                  return (
+                    <div className="resume">
+                      <ResumeSection title="Technologies" id="tech-sec">
+                          <TechnologyListing title="Languages" techs="Python, JavaScript (AJAX, JSON), HTML, CSS, SQL"/>
+                          <TechnologyListing title="Frameworks/Technologies" techs="Flask, jQuery, Bootstrap, Jinja, React"/>
+                          <TechnologyListing title="Database/Industry Tools" techs="PostgreSQL, Git, GitHub, Command Line"/>
+                          <TechnologyListing title="Tools/Software" techs="ArcGIS, ENVI, AutoCAD, Inkscape, Unit/Integration Testing"/>
+                      </ResumeSection>
+                      <ResumeSection title="Education" id="edu-sec">
+                          <EducationListing 
+                          school="Hackbright Academy"
+                          degree="Certificate of Completion"
+                          date="2016 - 2016"
+                          descrip="Accelerated, 12-week, software engineering program for women."/>
+                          <EducationListing 
+                          school="Free Code Camp"
+                          degree="Front-End Development Track, Certificate of Completion"
+                          date="2016 - 2016"
+                          descrip="Completed algorithmic scripting problem sets and dynamic front-end projects using JavaScript."/>
+                          <EducationListing 
+                          school="University of California, Los Angeles"
+                          degree="B.A. in Geography and Environmental Studies, Minor in Geographic Information Systems and Technology"
+                          date="2012 - 2015"
+                          descrip="Summa Cum Laude, Cumulative GPA: 3.9"/>
+                      </ResumeSection>
+
+                      <ResumeSection title="Experience" id="exp-sec">
+                          <ExperienceListing company="Hackbright Academy" pos="Teaching Assistant"
+                          date="December 2016 - Present">
+                              <ExperienceDescription text="-Strengthened skills in Hackbright&rsquo;s tech stack (Python, Javascript, SQL, SQL Alchemy, Flask, jQuery, HTML, CSS)"/>
+                              <ExperienceDescription text="-Conducted weekly meetings with advisees to ensure understanding of material and to provide support"/>
+                              <ExperienceDescription text="-Lead advisees through project planning, data model design, and feature scoping and execution"/>
+                              <ExperienceDescription text="-Explained concepts and reviewed code for students during daily lab exercises"/>
+                              <ExperienceDescription text="-Guided students through understanding new technologies and debugging during project time"/>
+                          </ExperienceListing>
+                          <ExperienceListing company="Ramboll Environ" pos="GIS Analyst Associate"
+                          date="June 2015 - July 2016">
+                              <ExperienceDescription text="-Produced client-ready maps and graphics for environmental reports and presentations using ArcMap, AutoCAD, Inkscape, and Powerpoint"/>
+                              <ExperienceDescription text="-Conceptualized and implemented spatial air pollution modeling utilizing ArcMap"/>
+                          </ExperienceListing>
+                      </ResumeSection>
+                      <br></br>
+                      <div><b>Download resume <a href="https://www.dropbox.com/s/c8aaqhychfzd5fm/Young_Kelly_Resume.pdf?dl=0">here</a>.</b></div>
+                      <br></br>
+                    </div>
+                  );
+              }
+            });
+
+            var Project = React.createClass({
+              render: function() {
+
+                return(
+                  <div className="project-box row">
+                    <ProjectPicture {...this.props}/>
+                    <ProjectText {...this.props}/>
+                  </div>
+                );
+              }
+            });
+
+            var ProjectPicture = React.createClass({
+              render: function() {
+                var ProjPicStyle = {
+                  width: "250px",
+                  border: "solid 0.5px",
+                  borderColor: "#d3d3d3"
+                }
+                return(
+                  <div className="col s4"><img className="responsive-img" src={this.props.piclink} style={ProjPicStyle}/></div>
+                  
+                );
+              }
+            });
+
+            var ProjectText = React.createClass({
+              render: function() {
+                
+                return(
+                  <div className="projtext col s8" >
+                    <div className="projtitle"><b>{this.props.title}</b></div>
+                    <p>{this.props.descrip}</p>
+                    <a href={this.props.link} target="_blank">Website</a>&nbsp;|&nbsp; 
+                     <a href={this.props.github} target="_blank">Github</a>
+                  </div>
+                );
+              }
+            });
+
+            var ResumeSection = React.createClass({
+                render: function(){
+                  return (
+                    <div className="resume-sec" id="{this.props.id}">
+                      <ResumeTitle {...this.props}/>
+                      {this.props.children}
+                    </div>
+                  );
+                }
+            });
+
+            var ResumeTitle = React.createClass({
+                render: function(){
+                  var ResumeTitleStyle = {
+                      fontFamily: '"Amatic SC", cursive',
+                      fontSize: "28px"
+                    }
+                  return (
+                    <div style={ResumeTitleStyle}>{this.props.title}</div>
+                  )
+                }
+            });
+
+            var EducationListing = React.createClass({
+                render: function(){
+                    var EduListStyle = {
+                      marginBottom: "10px"
+                    }
+
+                    return(
+                      <div className="edu-list" style={EduListStyle}>
+                      <p><span className="edu-list-title"><b>{this.props.school} |</b></span> {this.props.date}</p>
+                      <p><em>{this.props.degree}</em></p>
+                      <p>{this.props.descrip}</p>
+                      </div>
+                    );
+                }
+            });
+
+            var TechnologyListing = React.createClass({
+                render: function(){
+                  return(
+                      <p><b>{this.props.title} |</b> {this.props.techs}</p>
+                  );
+                }
+            });
+
+            var ExperienceListing = React.createClass({
+                
+                render: function(){
+                  var ExpListStyle = {
+                      marginBottom: "10px"
+                    }
+
+                  return(
+                      <div className="exp-list" style={ExpListStyle}>
+                      <p><span className="exp-list-title"><b>{this.props.company} |</b></span> {this.props.date}</p>
+                      <p><em>{this.props.pos}</em></p>
+
+                      <ul className="exp-descrip">
+                        {this.props.children}
+                      </ul>
+                      </div>
+                  );
+                }
+            });
+
+            var ExperienceDescription = React.createClass({
+                render: function(){
+                    return(
+                        <li className="exp-point">{this.props.text}</li>
+                    )
+                }
+            })
+
+            var ContactListing = React.createClass({
+                render: function(){
+                    return(
+                      <div><b>{this.props.icon}</b>: <a href={this.props.link}>{this.props.text}</a></div>
+                    );
+                }
+            })
+
+            var destination = document.querySelector("#container");
+              
+            ReactDOM.render(
+              <Router>
+                <Route path="/" component={App}>
+                    <IndexRoute component={ProjectView}/>
+                    <Route path="resume" component={ResumeView} />
+                    <Route path="contact" component={ContactView} />
+                </Route>
+              </Router>,
+              destination
+            );
+        </script>
+    </div>
+</body>
+</html>
