@@ -120,38 +120,44 @@
                       <Project 
                       piclink="./static/mapview.png"
                       title="JourneyTeller"
-                      descrip="JourneyTeller is an interactive application that lets users share their travel memories as a map. Users can create a trip and add places to the trip. Each place stores user-entered data and location information. After users enter the places for a trip, the application maps each place for a trip on a page that can be shared with friends and family."
+                      descrip="JourneyTeller is an interactive application that lets users share their travel memories as a map. Users can create a trip and add places to the trip. The app utilizes the Google Maps Javascript and Places API's to capture location information and create maps customized to the user's information. In addition, JourneyTeller incorporates user-centric design through robust handling of user input and ability for users to add, edit, and delete information via AJAX requests."
                       link="http://journey-teller.herokuapp.com"
                       github="https://github.com/kellyoung/itinerary-mapper"/>
                       <div style={ProjCatStyle}>Frontend</div>
                       <Project 
                       piclink="./static/tictactoe.png"
                       title="Tic Tac Toe"
-                      descrip="Tic Tac Toe Game: user can choose if they want to be 'x' or 'o'. The computer is programmed to
-                      either tie or win. The project was built as part of Free Code Camp's curriculum."
+                      descrip="A single-player, web-browser game. I programmed the player AI in JavaScriptto either tie or win and continuously play new games. In addition, I created a responsive and interactive user interface. The project was built as part of Free Code Camp's curriculum."
                       link="https://kellyoung.github.io/tic-tac-toe/"
                       github="https://github.com/kellyoung/tic-tac-toe"/>
 
                       <Project 
-                      piclink="./static/simon.png"
-                      title="Simon Game"
-                      descrip="A game where users must repeat after the computer. The user can play in strict mode where they will start from 0 if they make a mistake or normal mode where they will not be penalized. Once a user reaches a score of 20, they win. This project was built as part of Free Code Camp's curriculum."
-                      link="https://kellyoung.github.io/simon-game/"
-                      github="https://github.com/kellyoung/simon-game"/>
+                      piclink="./static/portfolio.png"
+                      title="Portfolio Page"
+                      descrip="A website built with React. I utilized React Router to create a single-page application."
+                      link="https://kellyoung.github.io"
+                      github="https://github.com/kellyoung/kellyoung.github.io"/>
 
                       <Project 
                       piclink="./static/pomodoro.png"
                       title="Pomodoro Timer"
-                      descrip="A timer that allows users to choose the number of intervals and the length of time for breaks and work periods. This project was built as part of Free Code Camp's curriculum."
+                      descrip="A web-browser timer which gives users the flexibility to set the timer to their desired preferences. I woorked on creating a clean and interactive interface along with programming the logic for a dynamic timer. In addition, I learned about the logic behind a timer and working with setTimeout and setInterval functionalities of JavaScript. This project was built as part of Free Code Camp's curriculum."
                       link="https://kellyoung.github.io/pomodoro-timer/"
                       github="https://github.com/kellyoung/pomodoro-timer"/>
 
                       <Project 
                       piclink="./static/calculator.png"
                       title="Calculator"
-                      descrip="This project was built as part of Free Code Camp's curriculum."
+                      descrip="A web-browser calculator. I learned how to handle a lot of user-input from click events and utilized JavaScript's Math library to perform calculations. This project was built as part of Free Code Camp's curriculum."
                       link="https://kellyoung.github.io/js-calculator/"
                       github="https://github.com/kellyoung/js-calculator"/>
+
+                      <Project 
+                      piclink="./static/simon.png"
+                      title="Simon Game"
+                      descrip="A web-browser game built as part of Free Code Camp's curriculum. I created the game logic and programmed the computer to perform a series of events and respond based on user's input."
+                      link="https://kellyoung.github.io/simon-game/"
+                      github="https://github.com/kellyoung/simon-game"/>
 
 
                     </div>
@@ -182,23 +188,17 @@
               render: function() {
                   return (
                     <div className="resume">
-                      <ResumeSection title="Technologies" id="tech-sec">
-                          <TechnologyListing title="Languages" techs="Python, JavaScript (AJAX, JSON), HTML, CSS, SQL"/>
-                          <TechnologyListing title="Frameworks/Technologies" techs="Flask, jQuery, Bootstrap, Jinja, React"/>
-                          <TechnologyListing title="Database/Industry Tools" techs="PostgreSQL, Git, GitHub, Command Line"/>
-                          <TechnologyListing title="Tools/Software" techs="ArcGIS, ENVI, AutoCAD, Inkscape, Unit/Integration Testing"/>
-                      </ResumeSection>
                       <ResumeSection title="Education" id="edu-sec">
                           <EducationListing 
                           school="Hackbright Academy"
                           degree="Certificate of Completion"
                           date="2016 - 2016"
-                          descrip="Accelerated, 12-week, software engineering program for women."/>
+                          descrip="Accelerated full-stack software engineering program for women. Learned to build full-stack applications and studied computer science fundamentals in Python."/>
                           <EducationListing 
                           school="Free Code Camp"
                           degree="Front-End Development Track, Certificate of Completion"
                           date="2016 - 2016"
-                          descrip="Completed algorithmic scripting problem sets and dynamic front-end projects using JavaScript."/>
+                          descrip="Studied computer science concepts in JavaScript and completed frontend projects focused on using API’s, creating game logic, and designing responsive and interactive interfaces."/>
                           <EducationListing 
                           school="University of California, Los Angeles"
                           degree="B.A. in Geography and Environmental Studies, Minor in Geographic Information Systems and Technology"
@@ -209,17 +209,22 @@
                       <ResumeSection title="Experience" id="exp-sec">
                           <ExperienceListing company="Hackbright Academy" pos="Teaching Assistant"
                           date="December 2016 - Present">
-                              <ExperienceDescription text="-Strengthened skills in Hackbright&rsquo;s tech stack (Python, Javascript, SQL, SQL Alchemy, Flask, jQuery, HTML, CSS)"/>
-                              <ExperienceDescription text="-Conducted weekly meetings with advisees to ensure understanding of material and to provide support"/>
-                              <ExperienceDescription text="-Lead advisees through project planning, data model design, and feature scoping and execution"/>
-                              <ExperienceDescription text="-Explained concepts and reviewed code for students during daily lab exercises"/>
-                              <ExperienceDescription text="-Guided students through understanding new technologies and debugging during project time"/>
+                              <ExperienceDescription text="-Directly lead 4 advisees through daily scrum meetings, project planning, data model design, and feature scoping and execution"/>
+                              <ExperienceDescription text="-Explained programming concepts in-depth and reviewed students’ code during daily lab exercises"/>
+                              <ExperienceDescription text="-Provided 20 students with real-time guidance while they built their capstone projects, which required understanding new technologies and unfamiliar code quickly in order to explain new concepts and debug "/>
                           </ExperienceListing>
                           <ExperienceListing company="Ramboll Environ" pos="GIS Analyst Associate"
                           date="June 2015 - July 2016">
-                              <ExperienceDescription text="-Produced client-ready maps and graphics for environmental reports and presentations using ArcMap, AutoCAD, Inkscape, and Powerpoint"/>
-                              <ExperienceDescription text="-Conceptualized and implemented spatial air pollution modeling utilizing ArcMap"/>
+                              <ExperienceDescription text="-Independently supported over a hundred consulting projects as the sole graphics and GIS associate by efficiently producing client-ready maps and technical diagrams for environmental reports and presentations"/>
+                              <ExperienceDescription text="-Collaborated with air scientists to innovatively incorporate the use of ArcMap, AutoCAD, and Google Earth to conceptualize and implement spatial air pollution modeling for freeway construction"/>
+                              <ExperienceDescription text="-Expanded business’s graphic capabilities and improved efficiency by introducing Inkscape, an open source SVG editor, to workflow"/>
                           </ExperienceListing>
+                      </ResumeSection>
+                      <ResumeSection title="Technologies" id="tech-sec">
+                          <TechnologyListing title="Languages" techs="Python, JavaScript (AJAX, JSON), HTML, CSS, SQL"/>
+                          <TechnologyListing title="Frameworks/Technologies" techs="Flask, jQuery, Bootstrap, Jinja, React"/>
+                          <TechnologyListing title="Database/Industry Tools" techs="PostgreSQL, Git, GitHub, Command Line"/>
+                          <TechnologyListing title="Tools/Software" techs="ArcGIS, ENVI, AutoCAD, Inkscape, Unit/Integration Testing"/>
                       </ResumeSection>
                       <br></br>
                       <div><b>Download resume <a href="https://www.dropbox.com/s/rnk56sg6cxuxj8v/Young_Kelly_Resume.pdf?dl=0">here</a>.</b></div>
@@ -345,7 +350,7 @@
                         <li className="exp-point">{this.props.text}</li>
                     )
                 }
-            })
+            });
 
             var ContactListing = React.createClass({
                 render: function(){
@@ -353,7 +358,7 @@
                       <div><b>{this.props.icon}</b>: <a href={this.props.link}>{this.props.text}</a></div>
                     );
                 }
-            })
+            });
 
             var destination = document.querySelector("#container");
               
