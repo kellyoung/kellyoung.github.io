@@ -1,0 +1,12 @@
+body {
+  font-family: "Arial", "Helvetica", "sans-serif";
+}
+
+#header {
+  padding-top: 15px !important;
+  padding-bottom: 5px !important;
+  text-align: left !important;
+  color: #CC6666 !important;
+  font-size: 150%;
+  letter-spacing: 1px;
+}
